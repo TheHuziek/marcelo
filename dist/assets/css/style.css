@@ -1,0 +1,9 @@
+body {
+    background-color: #f0f2f5;
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+h1 {
+    color: #0070f3;
+}
