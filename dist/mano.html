@@ -1,205 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Red Social Universitaria - Feed</title>
-    <style>
-        /* CSS Reset & Variables Globales */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
 
-        body {
-            background-color: #fafafa;
-            color: #262626;
-            display: flex;
-            justify-content: center;
-            padding-top: 60px;
-        }
-
-        /* Barra de Navegación Superior */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 54px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #dbdbdb;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 100;
-        }
-
-        header .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #0095f6;
-        }
-
-        header input[type="search"] {
-            background: #efefef;
-            border: 1px solid #dbdbdb;
-            border-radius: 4px;
-            padding: 4px 8px;
-            font-size: 14px;
-            width: 180px;
-        }
-
-        /* Contenedor Principal */
-        main {
-            width: 100%;
-            max-width: 470px;
-            margin: 20px auto;
-        }
-
-        /* Sección de Historias / Destacados */
-        .stories-container {
-            background: #ffffff;
-            border: 1px solid #dbdbdb;
-            border-radius: 8px;
-            padding: 12px;
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            margin-bottom: 16px;
-        }
-
-        .story-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 12px;
-            cursor: pointer;
-        }
-
-        .story-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            padding: 2px;
-            background: linear-gradient(45deg, #EEEEEE, #6FCF97, #2FA084, #1F6F5F);
-        }
-
-        .story-avatar img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px solid #ffffff;
-            object-fit: cover;
-        }
-
-        .story-username {
-            margin-top: 4px;
-            max-width: 60px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Tarjeta de Publicación (Post) */
-        .post-card {
-            background: #ffffff;
-            border: 1px solid #dbdbdb;
-            border-radius: 8px;
-            margin-bottom: 16px;
-        }
-
-        /* Encabezado del Post */
-        .post-header {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-        }
-
-        .post-header img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .post-header .username {
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        /* Imagen/Contenido Multimedia del Post */
-        .post-image {
-            width: 100%;
-            background-color: #efefef;
-            aspect-ratio: 1 / 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .post-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Acciones / Botones de Interacción */
-        .post-actions {
-            padding: 8px 12px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .action-btn {
-            background: none;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        /* Leyenda y Detalles del Post */
-        .post-details {
-            padding: 0 12px 12px 12px;
-            font-size: 14px;
-        }
-
-        .likes-count {
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .caption {
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .caption span {
-            font-weight: 600;
-            margin-right: 6px;
-        }
-
-        .timestamp {
-            font-size: 10px;
-            color: #8e8e8e;
-            text-transform: uppercase;
-        }
-
-        /* Adaptabilidad Móvil */
-        @media (max-width: 500px) {
-            body {
-                padding-top: 50px;
-            }
-            .post-card, .stories-container {
-                border-radius: 0;
-                border-left: none;
-                border-right: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/mano.css">
 </head>
+
 <body>
 
     <!-- Navegación Superior -->
@@ -209,11 +18,33 @@
         <div>
             <span style="font-size: 20px; cursor: pointer;">🔔</span>
         </div>
+        <div class="nav-profile-container">
+            <div class="profile-trigger">
+                <img src="https://via.placeholder.com/32" alt="Mi Avatar" class="avatar-small">
+                <span>Mi Usuario</span>
+            </div>
+
+
+        </div> <!-- Menú Desplegable -->
+
     </header>
 
     <!-- Contenido Principal -->
     <main>
-        
+        <div class="nav-profile-container">
+            <div class="campus">
+                <select name="campus" id="campus-select">
+                    <optgroup label="Sinaloa">
+                        <option value="mochis">Mochis</option>
+                        <option value="mazatlan">Mazatlán</option>
+                    </optgroup>
+                    <optgroup label="Jalisco">
+                        <option value="guadalajara">Guadalajara</option>
+                        <option value="zapopan">Zapopan</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
         <!-- Carrusel de Historias / Estados -->
         <section class="stories-container">
             <div class="story-item">
@@ -234,6 +65,18 @@
                 </div>
                 <span class="story-username">club_ia</span>
             </div>
+            <div class="story-item">
+                <div class="story-avatar">
+                    <img src="https://via.placeholder.com/56" alt="Usuario">
+                </div>
+                <span class="story-username">nexus</span>
+            </div>
+            <div class="story-item">
+                <div class="story-avatar">
+                    <img src="https://via.placeholder.com/56" alt="Usuario">
+                </div>
+                <span class="story-username">hexacrews</span>
+            </div>
         </section>
 
         <!-- Feed Cronológico: Publicación 1 -->
@@ -242,7 +85,7 @@
                 <img src="https://via.placeholder.com/32" alt="Avatar">
                 <span class="username">comunidad_ing</span>
             </header>
-            
+
             <div class="post-image">
                 <img src="https://via.placeholder.com/470x470" alt="Contenido del Post">
             </div>
@@ -259,11 +102,12 @@
                     <span>comunidad_ing</span>
                     ¡Listos los equipos para el hackathon de este fin de semana! 🚀💻
                 </div>
-                <div class="timestamp">HACE 2 HORMAS</div>
+                <div class="timestamp">HACE 2 HORAS</div>
             </div>
         </article>
-
+        
     </main>
 
 </body>
+
 </html>

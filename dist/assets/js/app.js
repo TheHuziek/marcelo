@@ -1,3 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log(" JavaScript cargado correctamente desde Rust!");
+    fetch('#campus-seleccionado').addEventListener('change', (event) => {
+        const selectedCampus = event.target.value;
+        cambiarCampus(selectedCampus);
+    });
 });

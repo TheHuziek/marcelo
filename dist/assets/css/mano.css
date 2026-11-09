@@ -7,7 +7,7 @@
         }
 
         body {
-            background-color: #fafafa;
+            background-color: #EEEEEE;
             color: #262626;
             display: flex;
             justify-content: center;
@@ -22,7 +22,7 @@
             right: 0;
             height: 54px;
             background-color: #ffffff;
-            border-bottom: 1px solid #dbdbdb;
+            border-bottom: 1px solid #9a9a9a;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -37,7 +37,7 @@
 
         header input[type="search"] {
             background: #efefef;
-            border: 1px solid #dbdbdb;
+            border: 1px solid #9a9a9a;
             border-radius: 4px;
             padding: 4px 8px;
             font-size: 14px;
@@ -49,6 +49,76 @@
             width: 100%;
             max-width: 470px;
             margin: 20px auto;
+        }
+
+        /* .campus {
+            width: 100%;
+            border: 1px solid #dbdbdb;
+            max-width: 470px;
+            margin: 20px auto;
+        } */
+        /* Contenedor del selector de campus en el header */
+        .nav-profile-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .campus select {
+            appearance: none;
+            /* Elimina la flecha nativa fea del navegador */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            background-color: #ffffff;
+            color: #262626;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+
+            padding: 6px 32px 6px 12px;
+            /* Espacio a la derecha para la flecha personalizada */
+            border: 1px solid #dbdbdb;
+            border-radius: 6px;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        /* Efecto al pasar el cursor o enfocar el selector */
+        .campus select:hover,
+        .campus select:focus {
+            border-color: #a8a8a8;
+        }
+
+        /* Agregando una flecha personalizada usando un pseudo-elemento o contenedor */
+        .campus {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .campus::after {
+            content: "▼";
+            font-size: 10px;
+            color: #8e8e8e;
+            position: absolute;
+            right: 12px;
+            pointer-events: none;
+            /* Permite hacer clic a través de la flecha hacia el select */
+        }
+
+        /* Estilo para los grupos de opciones (optgroup) */
+        .campus optgroup {
+            font-weight: bold;
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+
+        /* Estilo para las opciones individuales */
+        .campus option {
+            font-weight: normal;
+            color: #262626;
+            padding: 8px;
         }
 
         /* Sección de Historias / Destacados */
@@ -185,9 +255,68 @@
             body {
                 padding-top: 50px;
             }
-            .post-card, .stories-container {
+
+            .post-card,
+            .stories-container {
                 border-radius: 0;
                 border-left: none;
                 border-right: none;
             }
         }
+        /* Estilos de la Barra Inferior */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-color: #ffffff;
+    border-top: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Opciones individuales */
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8e8e8e;
+    flex: 1;
+    height: 100%;
+    transition: color 0.2s ease;
+}
+
+.nav-icon {
+    font-size: 20px;
+}
+
+.nav-label {
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+/* Estado Activo */
+.nav-item.active {
+    color: #0095f6;
+    font-weight: 600;
+}
+
+/* Margen inferior al contenido principal para no solapar con la barra */
+main {
+    padding-bottom: 60px;
+}
+
+/* Mostrar u ocultar según el tamaño de pantalla */
+@media (min-width: 768px) {
+    .bottom-nav {
+        display: none; /* Se oculta en monitores/laptops si prefieres mantener solo la barra superior */
+    }
+    main {
+        padding-bottom: 0;
+    }
+}
